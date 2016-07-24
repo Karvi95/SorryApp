@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */; };
+		CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1005FA71E33241A7D293399C /* libPods-SorryApp.a */; };
 		F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */; };
 		F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */; };
 		F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1005FA71E33241A7D293399C /* libPods-SorryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SorryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.release.xcconfig"; sourceTree = "<group>"; };
 		F8A3BBEC1D3F0E9400663D91 /* SorryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SorryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F13278548532B891BE578C6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1005FA71E33241A7D293399C /* libPods-SorryApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8A3BBE31D3F0E9400663D91 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,8 @@
 				F8A3BC051D3F0E9400663D91 /* SorryAppTests */,
 				F8A3BC101D3F0E9400663D91 /* SorryAppUITests */,
 				F8A3BBED1D3F0E9400663D91 /* Products */,
+				FF9BFB69EB9B1A8AB864331D /* Pods */,
+				F13278548532B891BE578C6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +119,7 @@
 				F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */,
 				F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */,
 				F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */,
+				9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */,
 				F8A3BBF51D3F0E9400663D91 /* Main.storyboard */,
 				F8A3BBF81D3F0E9400663D91 /* Assets.xcassets */,
 				F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */,
@@ -128,6 +146,15 @@
 			path = SorryAppUITests;
 			sourceTree = "<group>";
 		};
+		FF9BFB69EB9B1A8AB864331D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */,
+				E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8A3BC161D3F0E9400663D91 /* Build configuration list for PBXNativeTarget "SorryApp" */;
 			buildPhases = (
+				66FB71FC8CF50517E7235712 /* [CP] Check Pods Manifest.lock */,
 				F8A3BBE81D3F0E9400663D91 /* Sources */,
 				F8A3BBE91D3F0E9400663D91 /* Frameworks */,
 				F8A3BBEA1D3F0E9400663D91 /* Resources */,
+				72F04910A955153A1E050A6A /* [CP] Embed Pods Frameworks */,
+				EE07EFD2729100E37FCADDF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +226,7 @@
 				TargetAttributes = {
 					F8A3BBEB1D3F0E9400663D91 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Z9DV845KQC;
 					};
 					F8A3BC011D3F0E9400663D91 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -254,6 +285,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		66FB71FC8CF50517E7235712 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72F04910A955153A1E050A6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE07EFD2729100E37FCADDF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8A3BBE81D3F0E9400663D91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +340,7 @@
 			files = (
 				F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */,
 				F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */,
+				9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */,
 				F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,23 +483,31 @@
 		};
 		F8A3BC171D3F0E9400663D91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SorryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		F8A3BC181D3F0E9400663D91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SorryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -488,6 +576,7 @@
 				F8A3BC181D3F0E9400663D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8A3BC191D3F0E9400663D91 /* Build configuration list for PBXNativeTarget "SorryAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +585,7 @@
 				F8A3BC1B1D3F0E9400663D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8A3BC1C1D3F0E9400663D91 /* Build configuration list for PBXNativeTarget "SorryAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +594,7 @@
 				F8A3BC1E1D3F0E9400663D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

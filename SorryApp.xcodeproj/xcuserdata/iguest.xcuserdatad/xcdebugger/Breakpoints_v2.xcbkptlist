@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/FirstViewController.swift"
+            timestampString = "490922759.704927"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5"
+            endingLineNumber = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.FirstViewController.__deallocating_deinit"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/SorryApp/SorryApp/FirstViewController.swift"
+                  timestampString = "490922761.028974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.FirstViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SorryApp.FirstViewController"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/SorryApp/SorryApp/FirstViewController.swift"
+                  timestampString = "490922761.029115"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.FirstViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SorryApp.FirstViewController&gt;"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/SorryApp/SorryApp/FirstViewController.swift"
+                  timestampString = "490922761.029199"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "105">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -21,17 +21,37 @@ extension CALayer {
 }
 
 class SecondViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //pull timesSaidSorry and not sorry from database
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBOutlet weak var timesSaidSorry: UILabel!
+    @IBOutlet weak var timesNoSorry: UILabel!
+    
+    @IBAction func saidSorry(sender: AnyObject) {
+        let sorryCount = 0; // pull from database
+        updateSorryCount(sorryCount)
+        
+    }
 
-
+    @IBAction func didnotSaySorry(sender: AnyObject) {
+        let noCount = 0; // pull from database
+        updateSorryCount(noCount)
+    }
+    
+    func updateSorryCount(counts : Int){
+        //update it on the screen
+        
+        //get the timestamp
+        
+        //update database with new sorry/not sorry count and timestamp
+    }
 }
 
