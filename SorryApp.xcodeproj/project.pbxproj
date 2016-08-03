@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */; };
+		A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */; };
+		A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */; };
+		A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */; };
+		A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FB0701D473A9E007286B8 /* LoginViewController.swift */; };
+		A11FB0741D473DB5007286B8 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A11FB0731D473DB5007286B8 /* bridge.m */; };
+		A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB0751D474396007286B8 /* Bolts.framework */; };
 		CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1005FA71E33241A7D293399C /* libPods-SorryApp.a */; };
 		F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */; };
 		F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */; };
@@ -40,6 +46,13 @@
 		1005FA71E33241A7D293399C /* libPods-SorryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SorryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		A11FB0701D473A9E007286B8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A11FB0721D473D99007286B8 /* facebookLoginTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "facebookLoginTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		A11FB0731D473DB5007286B8 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
+		A11FB0751D474396007286B8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.release.xcconfig"; sourceTree = "<group>"; };
 		F8A3BBEC1D3F0E9400663D91 /* SorryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SorryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +75,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */,
+				A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */,
 				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
+				A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */,
+				A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +103,10 @@
 		F13278548532B891BE578C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A11FB0751D474396007286B8 /* Bolts.framework */,
+				A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */,
+				A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */,
+				A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */,
 				1005FA71E33241A7D293399C /* libPods-SorryApp.a */,
 			);
 			name = Frameworks;
@@ -117,10 +138,13 @@
 			isa = PBXGroup;
 			children = (
 				F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */,
+				A11FB0721D473D99007286B8 /* facebookLoginTest-Bridging-Header.h */,
+				A11FB0731D473DB5007286B8 /* bridge.m */,
 				F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */,
 				F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */,
 				9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */,
 				F8A3BBF51D3F0E9400663D91 /* Main.storyboard */,
+				A11FB0701D473A9E007286B8 /* LoginViewController.swift */,
 				F8A3BBF81D3F0E9400663D91 /* Assets.xcassets */,
 				F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */,
 				F8A3BBFD1D3F0E9400663D91 /* Info.plist */,
@@ -338,9 +362,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11FB0741D473DB5007286B8 /* bridge.m in Sources */,
 				F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */,
 				F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */,
 				9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */,
+				A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */,
 				F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +514,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SorryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryApp;
@@ -503,6 +533,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SorryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryApp;
@@ -514,7 +548,6 @@
 		F8A3BC1A1D3F0E9400663D91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SorryAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryAppTests;
@@ -526,7 +559,6 @@
 		F8A3BC1B1D3F0E9400663D91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SorryAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karvi95.ischool.SorryAppTests;
