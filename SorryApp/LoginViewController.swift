@@ -38,35 +38,37 @@ class LoginViewController: UIViewController {
     func fetchProfile(){
         let parameters = ["fields": "email, first_name, last_name, link, picture"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) -> Void in
-            
-            if let link = result["link"] as? String {
-                NSLog(link)
+        
+            if (error == nil) {
+                let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
+                self.presentViewController(meVC, animated: false, completion: nil)
             }
-            if let email = result["email"] as? String {
-                NSLog(email)
-            }
-            if let fname = result["first_name"] as? String {
-                NSLog(fname)
-            }
-            if let lname = result["last_name"] as? String {
-                NSLog(lname)
-            }
-            if let pic = result["picture"] as? String {
-                NSLog(pic)
-            }
-            if(error != nil){
-                print(error)
-            }
+//            if let link = result["link"] as? String {
+//                NSLog(link)
+//            }
+//            if let email = result["email"] as? String {
+//                NSLog(email)
+//            }
+//            if let fname = result["first_name"] as? String {
+//                NSLog(fname)
+//            }
+//            if let lname = result["last_name"] as? String {
+//                NSLog(lname)
+//            }
+//            if let pic = result["picture"] as? String {
+//                NSLog(pic)
+//            }
+//            if(error != nil){
+//                print(error)
+//            }
         }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func login(sender: AnyObject) {
-        
     }
     
 }

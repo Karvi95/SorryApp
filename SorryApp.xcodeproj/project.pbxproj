@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4DFDBB1D555AF80061DC81 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4DFDBA1D555AF80061DC81 /* TabBarViewController.swift */; };
 		9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; };
 		9DB3AEB11D55460800868CEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */; };
@@ -96,6 +97,7 @@
 /* Begin PBXFileReference section */
 		1005FA71E33241A7D293399C /* libPods-SorryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SorryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9D4DFDBA1D555AF80061DC81 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */,
 				9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */,
 				F8A3BBF51D3F0E9400663D91 /* Main.storyboard */,
+				9D4DFDBA1D555AF80061DC81 /* TabBarViewController.swift */,
 				A11FB0701D473A9E007286B8 /* LoginViewController.swift */,
 				F8A3BBF81D3F0E9400663D91 /* Assets.xcassets */,
 				F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */,
@@ -470,6 +473,7 @@
 				F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */,
 				F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */,
 				9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */,
+				9D4DFDBB1D555AF80061DC81 /* TabBarViewController.swift in Sources */,
 				A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */,
 				F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */,
 			);
