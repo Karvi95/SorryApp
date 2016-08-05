@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Charts
+
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {

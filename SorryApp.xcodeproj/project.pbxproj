@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; };
+		9DB3AEB11D55460800868CEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */; };
 		A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */; };
 		A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */; };
@@ -26,33 +28,40 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F8954D611D553B6A002C9C50 /* PBXContainerItemProxy */ = {
+		9DB3AEA81D5545FC00868CEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */;
+			containerPortal = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
 			remoteInfo = "Charts-iOS";
 		};
-		F8954D631D553B6A002C9C50 /* PBXContainerItemProxy */ = {
+		9DB3AEAA1D5545FC00868CEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */;
+			containerPortal = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
 			remoteInfo = "Charts-TV";
 		};
-		F8954D651D553B6A002C9C50 /* PBXContainerItemProxy */ = {
+		9DB3AEAC1D5545FC00868CEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */;
+			containerPortal = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
 			remoteInfo = "Charts-OSX";
 		};
-		F8954D671D553B6A002C9C50 /* PBXContainerItemProxy */ = {
+		9DB3AEAE1D5545FC00868CEC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */;
+			containerPortal = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
 			remoteInfo = ChartsTests;
+		};
+		9DB3AEB21D55460800868CEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
 		};
 		F8A3BC031D3F0E9400663D91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -70,9 +79,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9DB3AEB41D55460900868CEC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DB3AEB11D55460800868CEC /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1005FA71E33241A7D293399C /* libPods-SorryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SorryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -82,7 +106,6 @@
 		A11FB0731D473DB5007286B8 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
 		A11FB0751D474396007286B8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.release.xcconfig"; sourceTree = "<group>"; };
-		F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		F8A3BBEC1D3F0E9400663D91 /* SorryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SorryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +130,7 @@
 				A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */,
 				A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */,
 				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
+				9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */,
 				A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */,
 				A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -129,6 +153,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DB3AEA21D5545FC00868CEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3AEA91D5545FC00868CEC /* Charts.framework */,
+				9DB3AEAB1D5545FC00868CEC /* Charts.framework */,
+				9DB3AEAD1D5545FC00868CEC /* Charts.framework */,
+				9DB3AEAF1D5545FC00868CEC /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F13278548532B891BE578C6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,21 +176,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F8954D5B1D553B6A002C9C50 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F8954D621D553B6A002C9C50 /* Charts.framework */,
-				F8954D641D553B6A002C9C50 /* Charts.framework */,
-				F8954D661D553B6A002C9C50 /* Charts.framework */,
-				F8954D681D553B6A002C9C50 /* ChartsTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F8A3BBE31D3F0E9400663D91 = {
 			isa = PBXGroup;
 			children = (
 				F8A3BBEE1D3F0E9400663D91 /* SorryApp */,
+				9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */,
 				F8A3BC051D3F0E9400663D91 /* SorryAppTests */,
 				F8A3BC101D3F0E9400663D91 /* SorryAppUITests */,
 				F8A3BBED1D3F0E9400663D91 /* Products */,
@@ -188,7 +213,6 @@
 				F8A3BBF81D3F0E9400663D91 /* Assets.xcassets */,
 				F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */,
 				F8A3BBFD1D3F0E9400663D91 /* Info.plist */,
-				F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */,
 			);
 			path = SorryApp;
 			sourceTree = "<group>";
@@ -233,10 +257,12 @@
 				F8A3BBEA1D3F0E9400663D91 /* Resources */,
 				72F04910A955153A1E050A6A /* [CP] Embed Pods Frameworks */,
 				EE07EFD2729100E37FCADDF4 /* [CP] Copy Pods Resources */,
+				9DB3AEB41D55460900868CEC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9DB3AEB31D55460800868CEC /* PBXTargetDependency */,
 			);
 			name = SorryApp;
 			productName = SorryApp;
@@ -316,8 +342,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F8954D5B1D553B6A002C9C50 /* Products */;
-					ProjectRef = F8954D5A1D553B6A002C9C50 /* Charts.xcodeproj */;
+					ProductGroup = 9DB3AEA21D5545FC00868CEC /* Products */;
+					ProjectRef = 9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -330,32 +356,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F8954D621D553B6A002C9C50 /* Charts.framework */ = {
+		9DB3AEA91D5545FC00868CEC /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = F8954D611D553B6A002C9C50 /* PBXContainerItemProxy */;
+			remoteRef = 9DB3AEA81D5545FC00868CEC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F8954D641D553B6A002C9C50 /* Charts.framework */ = {
+		9DB3AEAB1D5545FC00868CEC /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = F8954D631D553B6A002C9C50 /* PBXContainerItemProxy */;
+			remoteRef = 9DB3AEAA1D5545FC00868CEC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F8954D661D553B6A002C9C50 /* Charts.framework */ = {
+		9DB3AEAD1D5545FC00868CEC /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = F8954D651D553B6A002C9C50 /* PBXContainerItemProxy */;
+			remoteRef = 9DB3AEAC1D5545FC00868CEC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F8954D681D553B6A002C9C50 /* ChartsTests.xctest */ = {
+		9DB3AEAF1D5545FC00868CEC /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = F8954D671D553B6A002C9C50 /* PBXContainerItemProxy */;
+			remoteRef = 9DB3AEAE1D5545FC00868CEC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -468,6 +494,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9DB3AEB31D55460800868CEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 9DB3AEB21D55460800868CEC /* PBXContainerItemProxy */;
+		};
 		F8A3BC041D3F0E9400663D91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F8A3BBEB1D3F0E9400663D91 /* SorryApp */;
@@ -592,6 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -611,6 +643,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

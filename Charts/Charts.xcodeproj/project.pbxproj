@@ -359,7 +359,6 @@
 		A52C5C8E1BAC5D1200594CDD /* ChartUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8EC7C1A9D151C00CE82E1 /* ChartUtils.swift */; };
 		A52C5C8F1BAC5D1200594CDD /* ChartViewPortHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8F06C1AB897D500566E05 /* ChartViewPortHandler.swift */; };
 		DDC77DC61C0A991A00C27BCF /* BarChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC77DC51C0A991A00C27BCF /* BarChartTests.swift */; };
-		F8954D691D553BBF002C9C50 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52C5C371BAC5CA400594CDD /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -530,7 +529,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8954D691D553BBF002C9C50 /* Charts.framework in Frameworks */,
 				65B3F6871C73BEA7000983D0 /* QuartzCore.framework in Frameworks */,
 				65B3F6851C73BE9E000983D0 /* UIKit.framework in Frameworks */,
 			);
