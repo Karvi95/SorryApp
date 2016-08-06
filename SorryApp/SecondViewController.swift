@@ -23,7 +23,8 @@ extension CALayer {
 class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //pull timesSaidSorry and not sorry from database
+        // pull timesSaidSorry and not sorry from database
+        // Reset to zero once a day has past
         
         
     }
