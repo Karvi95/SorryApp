@@ -26,6 +26,7 @@
 		F8A3BBFC1D3F0E9400663D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */; };
 		F8A3BC071D3F0E9400663D91 /* SorryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC061D3F0E9400663D91 /* SorryAppTests.swift */; };
 		F8A3BC121D3F0E9400663D91 /* SorryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC111D3F0E9400663D91 /* SorryAppUITests.swift */; };
+		F8AC3A211D5E99B6003DCEBB /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		F8A3BC0D1D3F0E9400663D91 /* SorryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SorryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BC111D3F0E9400663D91 /* SorryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryAppUITests.swift; sourceTree = "<group>"; };
 		F8A3BC131D3F0E9400663D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		F8AC3A251D5E9A66003DCEBB /* SorryAppAzure-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SorryAppAzure-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8AC3A211D5E99B6003DCEBB /* MicrosoftAzureMobile.framework in Frameworks */,
 				A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */,
 				A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */,
 				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
@@ -172,6 +176,7 @@
 				A11FB0751D474396007286B8 /* Bolts.framework */,
 				A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */,
 				A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */,
+				F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */,
 				A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */,
 				1005FA71E33241A7D293399C /* libPods-SorryApp.a */,
 			);
@@ -206,6 +211,7 @@
 			children = (
 				F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */,
 				A11FB0721D473D99007286B8 /* facebookLoginTest-Bridging-Header.h */,
+				F8AC3A251D5E9A66003DCEBB /* SorryAppAzure-Bridging-Header.h */,
 				A11FB0731D473DB5007286B8 /* bridge.m */,
 				F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */,
 				F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */,

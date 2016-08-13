@@ -33,7 +33,10 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     @IBOutlet weak var timesSaidSorry: UILabel!
+    
     @IBOutlet weak var timesNoSorry: UILabel!
     
     @IBAction func saidSorry(sender: AnyObject) {
@@ -55,4 +58,3 @@ class SecondViewController: UIViewController {
         //update database with new sorry/not sorry count and timestamp
     }
 }
-
