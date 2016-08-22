@@ -27,6 +27,9 @@
 		F8A3BC071D3F0E9400663D91 /* SorryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC061D3F0E9400663D91 /* SorryAppTests.swift */; };
 		F8A3BC121D3F0E9400663D91 /* SorryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC111D3F0E9400663D91 /* SorryAppUITests.swift */; };
 		F8AC3A211D5E99B6003DCEBB /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */; };
+		F8D1B8621D6A90AE0073E412 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */; };
+		F8D1B8631D6A90AE0073E412 /* MicrosoftAzureMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F8D1B8681D6A94270073E412 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D1B8671D6A94270073E412 /* MicrosoftAzureMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9DB3AEB11D55460800868CEC /* Charts.framework in Embed Frameworks */,
+				F8D1B8631D6A90AE0073E412 /* MicrosoftAzureMobile.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +129,7 @@
 		F8A3BC131D3F0E9400663D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		F8AC3A251D5E9A66003DCEBB /* SorryAppAzure-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SorryAppAzure-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8D1B8671D6A94270073E412 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +138,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8AC3A211D5E99B6003DCEBB /* MicrosoftAzureMobile.framework in Frameworks */,
+				F8D1B8681D6A94270073E412 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */,
 				A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */,
 				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
 				9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */,
 				A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */,
 				A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */,
+				F8D1B8621D6A90AE0073E412 /* MicrosoftAzureMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +193,7 @@
 		F8A3BBE31D3F0E9400663D91 = {
 			isa = PBXGroup;
 			children = (
+				F8D1B8671D6A94270073E412 /* MicrosoftAzureMobile.framework */,
 				F8A3BBEE1D3F0E9400663D91 /* SorryApp */,
 				9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */,
 				F8A3BC051D3F0E9400663D91 /* SorryAppTests */,

@@ -10,13 +10,14 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
+import MicrosoftAzureMobile
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var client: MSClient?
+    var client = MSClient?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -28,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.client = MSClient(
-            applicationURLString:"https://sorryapp.azurewebsites.net"
+            applicationURLString:"https://sorryappios.azurewebsites.net"
         )
         
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
