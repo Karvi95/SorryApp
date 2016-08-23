@@ -182,6 +182,7 @@
 			children = (
 				A11FB0751D474396007286B8 /* Bolts.framework */,
 				A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */,
+				F8D1B8671D6A94270073E412 /* MicrosoftAzureMobile.framework */,
 				A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */,
 				F8AC3A201D5E99B6003DCEBB /* MicrosoftAzureMobile.framework */,
 				A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */,
@@ -193,7 +194,6 @@
 		F8A3BBE31D3F0E9400663D91 = {
 			isa = PBXGroup;
 			children = (
-				F8D1B8671D6A94270073E412 /* MicrosoftAzureMobile.framework */,
 				F8A3BBEE1D3F0E9400663D91 /* SorryApp */,
 				9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */,
 				F8A3BC051D3F0E9400663D91 /* SorryAppTests */,
