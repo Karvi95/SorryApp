@@ -24,10 +24,11 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         loginButton.center = view.center
         // Do any additional setup after loading the view, typically from a nib.
-        
-        if let token = FBSDKAccessToken.currentAccessToken() {
+        let token = FBSDKAccessToken.currentAccessToken()
+        if (token != nil) {
             fetchProfile()
         }
+        
         
     }
     
@@ -36,12 +37,39 @@ class LoginViewController: UIViewController {
     }
     
     func fetchProfile(){
-        let parameters = ["fields": "email, first_name, last_name, link, picture"]
+        let parameters = ["fields": "email, first_name, last_name, link, picture, gender"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) -> Void in
         
             if (error == nil) {
+                let url = NSURL(string: "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php")
+                let request = NSMutableURLRequest(URL: url!)
+                request.HTTPMethod = "POST"
+                var email = result["email"] as! String
+                var fname = result["first_name"] as! String
+                var lname = result["last_name"] as! String
+                var dob = "1994-12-19"//result["birthday"] as! String
+                var gender = result["gender"] as! String
+                var postString = "email=" + email
+                postString += "&first_name=" + fname
+                postString += "&last_name=" + lname
+                postString += "&dob=" + dob
+                postString += "&gender=" + gender
+                request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+                let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+                    data, response, er in
+                    
+                    if er != nil{
+                        NSLog("error")
+                        return
+                    }
+                    
+                    NSLog("postString: \(postString) response: \(response)")
+                }
+                task.resume()
                 let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
                 self.presentViewController(meVC, animated: false, completion: nil)
+         //       let secondVC:SecondViewController = SecondViewController()
+          //      self.presentViewController(secondVC, animated: true, completion: nil)
             }
 //            if let link = result["link"] as? String {
 //                NSLog(link)
