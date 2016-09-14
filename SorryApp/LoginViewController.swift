@@ -72,8 +72,9 @@ class LoginViewController: UIViewController {
                     if status == "200" {
                         NSLog("found")
                         self.delegate.defaults.setObject(email, forKey: "email")
-                        let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
-                        self.presentViewController(meVC, animated: false, completion: nil)
+                        //let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
+                        //self.presentViewController(meVC, animated: false, completion: nil)
+                        self.performSegueWithIdentifier("login", sender: self)
                         }
                     else{
                         NSLog("User Not found!");

@@ -499,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 478E071CE18CD3D1DB18C3DD08DC0DDD /* NXOAuth2Client.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -528,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 478E071CE18CD3D1DB18C3DD08DC0DDD /* NXOAuth2Client.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -547,6 +549,7 @@
 				PRODUCT_NAME = NXOAuth2Client;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
