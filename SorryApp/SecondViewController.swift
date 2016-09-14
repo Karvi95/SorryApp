@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 extension CALayer {
     var borderUIColor: UIColor {
         set {
@@ -21,14 +22,16 @@ extension CALayer {
 
 class SecondViewController: UIViewController {
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let userEnpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
+    let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // pull timesSaidSorry and not sorry from database
         // Reset to zero once a day has past
         NSLog("nsuserdefault email \(delegate.defaults.stringForKey("email")!)")
-        
-        
+        updateSNSCount("sorry")
+        updateSNSCount("notsorry")
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,15 +45,15 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var timesNoSorry: UILabel!
     
     @IBAction func saidSorry(sender: AnyObject) {
-        let sorryCount = 0; // pull from database
-        updateSorryCount(sorryCount)
-        
+        timesSaidSorry.text = String(Int(timesSaidSorry.text!)! + 1)
+        saidSNS("sorry")
     }
 
-    @IBAction func didnotSaySorry(sender: AnyObject) {
-        let noCount = 0; // pull from database
-        updateSorryCount(noCount)
+    @IBAction func noSorry(sender: AnyObject) {
+        timesNoSorry.text = String(Int(timesNoSorry.text!)! + 1)
+        saidSNS("notsorry")
     }
+    
     
     func updateSorryCount(counts : Int){
         //update it on the screen
@@ -58,5 +61,76 @@ class SecondViewController: UIViewController {
         //get the timestamp
         
         //update database with new sorry/not sorry count and timestamp
+    }
+    
+    func updateSNSCount(sorrynotsorry: String){
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry
+        let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
+        request.HTTPMethod = "GET"
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, er in
+            
+            if er != nil{
+                NSLog("get sns error: \(sorrynotsorry)")
+                return
+            }
+            
+            var response_status = Int()
+            if let httpResponse = response as? NSHTTPURLResponse {
+                response_status = httpResponse.statusCode
+            }
+            if(response_status != 200){
+                NSLog("cannot access endpoint, error code \(response_status)")
+                return
+            }
+            let swiftyJSON = JSON(data: data!)
+            var status = swiftyJSON["status"].stringValue
+            if status == "200"{
+                let numSNS = swiftyJSON["data"]["num_" + sorrynotsorry][0].stringValue
+                NSLog(numSNS)
+                if sorrynotsorry=="sorry"{
+                    self.timesSaidSorry.text = numSNS
+                }
+                else{
+                    self.timesNoSorry.text = numSNS
+                }
+            }
+        }
+        task.resume()
+            
+    }
+    
+    func saidSNS(sorrynotsorry: String){
+        let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint)!)
+        request.HTTPMethod = "POST"
+        let postString = "email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, er in
+            
+            if er != nil{
+                NSLog("error")
+                return
+            }
+            var response_status = Int()
+            if let httpResponse = response as? NSHTTPURLResponse {
+                response_status = httpResponse.statusCode
+            }
+            if response_status != 200 {
+                NSLog("cannot access endpoint, error code \(response_status)")
+                return
+            }
+            let swiftyJSON = JSON(data: data!)
+            let status = swiftyJSON["status"].stringValue
+            if(status == "200"){
+                self.updateSNSCount(sorrynotsorry)
+            }
+            else{
+                NSLog("error code " + status)
+            }
+        }
+        
+        task.resume()
+        
     }
 }

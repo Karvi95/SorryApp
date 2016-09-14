@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                     var userEmail = swiftyJSON["data"]["user"][0]["Email"].stringValue
                     NSLog("status: \(status) email: \(userEmail)")
                     
-                    if(status == "200"){
+                    if status == "200" {
                         NSLog("found")
                         self.delegate.defaults.setObject(email, forKey: "email")
                         let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
