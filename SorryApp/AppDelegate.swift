@@ -20,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
         self.window?.rootViewController = loginVC
         // Override point for customization after application launch.
+        
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         return true
     }
     
