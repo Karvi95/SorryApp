@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5E2060A6AE6C46CDA0BA36F24FF908FC'
-               BlueprintName = 'NXOAuth2Client'
+               BlueprintIdentifier = '985DDA18A0B491F8326D6A8A9F19FCCA'
+               BlueprintName = 'SwiftyJSON'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'NXOAuth2Client.framework'>
+               BuildableName = 'SwiftyJSON.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

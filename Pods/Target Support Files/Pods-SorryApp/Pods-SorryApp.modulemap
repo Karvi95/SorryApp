@@ -1,0 +1,6 @@
+framework module Pods_SorryApp {
+  umbrella header "Pods-SorryApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

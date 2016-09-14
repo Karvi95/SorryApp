@@ -6,23 +6,33 @@
 	<dict>
 		<key>NXOAuth2Client.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-SorryApp.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E85AABA23B5E543708FA4E03130F831</key>
+		<key>5E2060A6AE6C46CDA0BA36F24FF908FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A11DC30D285178E1B559991D17DDA059</key>
+		<key>63362E205B925636DD5C0D7156206AF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>985DDA18A0B491F8326D6A8A9F19FCCA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

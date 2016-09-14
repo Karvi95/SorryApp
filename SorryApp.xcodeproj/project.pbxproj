@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BDD1327C72EAEF350E9F868 /* Pods_SorryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F019E5ED12F754833BAC3D6 /* Pods_SorryApp.framework */; };
 		9D4DFDBB1D555AF80061DC81 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4DFDBA1D555AF80061DC81 /* TabBarViewController.swift */; };
 		9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; };
 		9DB3AEB11D55460800868CEC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB3AEA91D5545FC00868CEC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -17,7 +18,6 @@
 		A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FB0701D473A9E007286B8 /* LoginViewController.swift */; };
 		A11FB0741D473DB5007286B8 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A11FB0731D473DB5007286B8 /* bridge.m */; };
 		A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB0751D474396007286B8 /* Bolts.framework */; };
-		CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1005FA71E33241A7D293399C /* libPods-SorryApp.a */; };
 		F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */; };
 		F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */; };
 		F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */; };
@@ -95,11 +95,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1005FA71E33241A7D293399C /* libPods-SorryApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SorryApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92469DC7EDDB8B7572E4BAD7 /* Pods-SorryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9D4DFDBA1D555AF80061DC81 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9DB3AEA11D5545FC00868CEC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		9DE92A211D42D51D000FE901 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		9F019E5ED12F754833BAC3D6 /* Pods_SorryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SorryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -131,10 +131,10 @@
 			files = (
 				A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */,
 				A11FB06F1D4738B7007286B8 /* FBSDKShareKit.framework in Frameworks */,
-				CA5DED8B29BAD3199F0E371F /* libPods-SorryApp.a in Frameworks */,
 				9DB3AEB01D55460800868CEC /* Charts.framework in Frameworks */,
 				A11FB06D1D4738B7007286B8 /* FBSDKCoreKit.framework in Frameworks */,
 				A11FB06E1D4738B7007286B8 /* FBSDKLoginKit.framework in Frameworks */,
+				7BDD1327C72EAEF350E9F868 /* Pods_SorryApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 				A11FB06A1D4738B7007286B8 /* FBSDKCoreKit.framework */,
 				A11FB06B1D4738B7007286B8 /* FBSDKLoginKit.framework */,
 				A11FB06C1D4738B7007286B8 /* FBSDKShareKit.framework */,
-				1005FA71E33241A7D293399C /* libPods-SorryApp.a */,
+				9F019E5ED12F754833BAC3D6 /* Pods_SorryApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,6 +254,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8A3BC161D3F0E9400663D91 /* Build configuration list for PBXNativeTarget "SorryApp" */;
 			buildPhases = (
+				91967A4CBB7B4DAF0FF02336 /* 📦 Check Pods Manifest.lock */,
 				66FB71FC8CF50517E7235712 /* [CP] Check Pods Manifest.lock */,
 				F8A3BBE81D3F0E9400663D91 /* Sources */,
 				F8A3BBE91D3F0E9400663D91 /* Frameworks */,
@@ -261,6 +262,8 @@
 				72F04910A955153A1E050A6A /* [CP] Embed Pods Frameworks */,
 				EE07EFD2729100E37FCADDF4 /* [CP] Copy Pods Resources */,
 				9DB3AEB41D55460900868CEC /* Embed Frameworks */,
+				595F881579E5F912AEFC509A /* 📦 Embed Pods Frameworks */,
+				843FF88DFEC62848A1261CCB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -417,6 +420,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		595F881579E5F912AEFC509A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		66FB71FC8CF50517E7235712 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,6 +463,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		843FF88DFEC62848A1261CCB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91967A4CBB7B4DAF0FF02336 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EE07EFD2729100E37FCADDF4 /* [CP] Copy Pods Resources */ = {

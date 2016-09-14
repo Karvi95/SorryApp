@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SorryApp/LoginViewController.swift"
-            timestampString = "495084908.669815"
+            timestampString = "495526971.558076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "fetchProfile()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,13 +26,173 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SorryApp/SecondViewController.swift"
-            timestampString = "494904614.039696"
+            timestampString = "495526971.558076"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/LoginViewController.swift"
+            timestampString = "495526971.558076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/LoginViewController.swift"
+            timestampString = "495526971.558076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "fetchProfile()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.fetchProfile () -&gt; ()"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495520818.951426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "877">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.(fetchProfile () -&gt; ()).(closure #1)"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495520818.95463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "2426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/LoginViewController.swift"
+            timestampString = "495526971.558076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "fetchProfile()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.fetchProfile () -&gt; ()"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495520824.853679"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "877">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.(fetchProfile () -&gt; ()).(closure #1)"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495520824.854928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "2426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/LoginViewController.swift"
+            timestampString = "495526971.558076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "fetchProfile()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.fetchProfile () -&gt; ()"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495525107.084522"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "877">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SorryApp.LoginViewController.(fetchProfile () -&gt; ()).(closure #1)"
+                  moduleName = "SorryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jhall38/xcodeworkspace/SorryApp/SorryApp/LoginViewController.swift"
+                  timestampString = "495525107.087207"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "2426">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

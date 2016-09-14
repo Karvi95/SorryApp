@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 extension CALayer {
     var borderUIColor: UIColor {
         set {
@@ -21,10 +20,13 @@ extension CALayer {
 }
 
 class SecondViewController: UIViewController {
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // pull timesSaidSorry and not sorry from database
         // Reset to zero once a day has past
+        NSLog("nsuserdefault email \(delegate.defaults.stringForKey("email")!)")
         
         
     }

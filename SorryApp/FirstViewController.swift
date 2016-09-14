@@ -11,6 +11,7 @@ import UIKit
 import Charts
 
 class FirstViewController: UIViewController {
+    let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
