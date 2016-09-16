@@ -10,9 +10,10 @@ import UIKit
 import FBSDKLoginKit
 import SwiftyJSON
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     @IBOutlet weak var details: UILabel!
+    let endpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
     
     let loginButton : FBSDKLoginButton = {
         let button = FBSDKLoginButton()
@@ -22,10 +23,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(loginButton)
-        loginButton.center = view.center
+//        view.addSubview(loginButton)
+//        loginButton.center = view.center
+//        loginButton.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         let token = FBSDKAccessToken.currentAccessToken()
+        let loginManager = FBSDKLoginManager()    //only uncomment when logging out user for testing
+        loginManager.logOut()
         if (token != nil) {
             fetchProfile()
         }
@@ -33,19 +37,33 @@ class LoginViewController: UIViewController {
         
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result : FBSDKLoginManagerLoginResult){
+    override func viewDidAppear(animated: Bool) {
+        view.addSubview(loginButton)
+        loginButton.center = view.center
+        loginButton.delegate = self
+    }
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         fetchProfile()
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+        return true;
     }
     
     func fetchProfile(){
         let parameters = ["fields": "email, first_name, last_name, link, picture, gender"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) -> Void in
-        
+
             if (error == nil) {
-                let endpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
                 var email = result["email"] as! String
+                NSLog(email)
                 var params = "?email=" + email
-                let get = NSMutableURLRequest(URL: NSURL(string: endpoint + params)!)
+                let get = NSMutableURLRequest(URL: NSURL(string: self.endpoint + params)!)
                 get.HTTPMethod = "GET"
                 let gettask = NSURLSession.sharedSession().dataTaskWithRequest(get){
                     data, response, er in
@@ -61,12 +79,18 @@ class LoginViewController: UIViewController {
                         response_status = httpResponse.statusCode
                     }
                     if(response_status != 200){
-                        NSLog("cannot access endpoint, error code \(response_status)")
-                        return;
+                        if(response_status == 404){
+                            NSLog("User not found")
+                            self.createUser(result, email: email)
+                            return
+                        }
+                        let swiftyJSON = JSON(data: data!)
+                        NSLog("cannot access endpoint, error code \(response_status) \(swiftyJSON["status_message"])")
+                        return
                     }
                     let swiftyJSON = JSON(data: data!)
-                    var status = swiftyJSON["status"].stringValue
-                    var userEmail = swiftyJSON["data"]["user"][0]["Email"].stringValue
+                    let status = swiftyJSON["status"].stringValue
+                    let userEmail = swiftyJSON["data"]["user"][0]["Email"].stringValue
                     NSLog("status: \(status) email: \(userEmail)")
                     
                     if status == "200" {
@@ -74,56 +98,14 @@ class LoginViewController: UIViewController {
                         self.delegate.defaults.setObject(email, forKey: "email")
                         //let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
                         //self.presentViewController(meVC, animated: false, completion: nil)
-                        self.performSegueWithIdentifier("login", sender: self)
+                        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
+                        dispatch_after(delay, dispatch_get_main_queue()){
+                            self.performSegueWithIdentifier("login", sender: self)
+                            }
                         }
                     else{
-                        NSLog("User Not found!");
-                        let url = NSURL(string: endpoint)
-                        let request = NSMutableURLRequest(URL: url!)
-                        request.HTTPMethod = "POST"
-                        let fname = result["first_name"] as! String
-                        let lname = result["last_name"] as! String
-                        let dob = "1994-12-19"//result["birthday"] as! String
-                        let gender = result["gender"] as! String
-                        var postString = "email=" + email
-                        postString += "&first_name=" + fname
-                        postString += "&last_name=" + lname
-                        postString += "&dob=" + dob
-                        postString += "&gender=" + gender
-                        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-                        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
-                            data, response, er in
-                            
-                            if er != nil{
-                                NSLog("error")
-                                return
-                            }
-                            response_status = Int()
-                            if let httpResponse = response as? NSHTTPURLResponse {
-                                response_status = httpResponse.statusCode
-                            }
-                            if(response_status != 200){
-                                NSLog("cannot access endpoint, error code \(response_status)")
-                                return
-                            }
-                            
-                            NSLog("postString: \(postString) response: \(response)")
-                            let swiftyJSON = JSON(data: data!)
-                            var status = swiftyJSON["status"].stringValue
-                            if(status == "200"){
-                                NSLog("user addded")
-                                self.delegate.defaults.setObject(email, forKey: "email")
-                                let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
-                                self.presentViewController(meVC, animated: false, completion: nil)
-                            }
-                            else{
-                                NSLog("error code " + status)
-                            }
-
-                            
-                        }
-                        task.resume()
-
+                        NSLog("User Not found!")
+                        self.createUser(result, email: email)
                     }
 
                 }
@@ -156,7 +138,52 @@ class LoginViewController: UIViewController {
     
     
     
-    
+    func createUser(result : AnyObject, email: String){
+        let url = NSURL(string: endpoint)
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        let fname = result["first_name"] as! String
+        let lname = result["last_name"] as! String
+        let gender = result["gender"] as! String
+        var postString = "email=" + email
+        postString += "&first_name=" + fname
+        postString += "&last_name=" + lname
+        postString += "&gender=" + gender
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+            data, response, er in
+            
+            if er != nil{
+                NSLog("error")
+                return
+            }
+            var response_status = Int()
+            if let httpResponse = response as? NSHTTPURLResponse {
+                response_status = httpResponse.statusCode
+            }
+            if(response_status != 200){
+                NSLog("cannot access endpoint, error code \(response_status) \(postString)")
+                return
+            }
+            
+            NSLog("postString: \(postString) response: \(response)")
+            let swiftyJSON = JSON(data: data!)
+            //var status = swiftyJSON["status"].stringValue
+            //if(status == "200"){
+                NSLog("user addded")
+                self.delegate.defaults.setObject(email, forKey: "email")
+                let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
+                self.presentViewController(meVC, animated: false, completion: nil)
+            //}
+//            else{
+//                NSLog("error code " + status)
+//            }
+            
+            
+        }
+        task.resume()
+
+    }
     
     
     override func didReceiveMemoryWarning() {

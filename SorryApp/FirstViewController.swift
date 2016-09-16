@@ -17,8 +17,8 @@ class FirstViewController: UIViewController {
     let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
 
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var x = ["", ""]
-    var y = [0.0, 0.0]
+    var x = [String]()
+    var y = [Double]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,8 @@ class FirstViewController: UIViewController {
 
     
     func loadChart(type: String){
+        x.removeAll()
+        y.removeAll()
         let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=sorry" + "&type=" + type
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
@@ -57,8 +59,8 @@ class FirstViewController: UIViewController {
                 let records = swiftyJSON["data"]["records"]
                 var i = 0
                 for record in records{
-                    self.x[i] = record.1["Date"].stringValue
-                    self.y[i] = Double(record.1["SCORE"].stringValue)!
+                    self.x.append(record.1["Date"].stringValue)
+                    self.y.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
                 }
                 var dataEntries: [ChartDataEntry] = []
