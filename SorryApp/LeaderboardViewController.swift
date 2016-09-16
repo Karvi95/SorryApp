@@ -18,6 +18,20 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     
     private var snsLabels = [UILabel]()
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func changeSNS(sender: AnyObject) {
+        switch segmentedControl.selectedSegmentIndex{
+            case 0:
+                updateLeaderboard("sorry")
+                break
+            case 1:
+                updateLeaderboard("notsorry")
+                break
+            default:
+                break
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLeaderboard("sorry")
@@ -27,6 +41,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 10
@@ -44,6 +60,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func updateLeaderboard(sorrynotsorry: String){
+        self.names = ["", "", "", "", "", "", "", "", "", ""]
+        self.counts = ["", "", "", "", "", "", "", "", "", ""]
         let params = "?sorrynotsorry=" + sorrynotsorry
         let request = NSMutableURLRequest(URL: NSURL(string: endpoint + params)!)
         request.HTTPMethod = "GET"

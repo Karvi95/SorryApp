@@ -78,16 +78,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cQw-Ov-Dg4">
-                                <rect key="frame" x="82" y="110" width="251" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="aI3-z7-oQn"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Said Sorry :("/>
-                                    <segment title="Didn't Say Sorry :)"/>
-                                </segments>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vDo-a2-8GA">
                                 <rect key="frame" x="20" y="176" width="374" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -166,6 +156,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cQw-Ov-Dg4">
+                                <rect key="frame" x="82" y="110" width="251" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="aI3-z7-oQn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Said Sorry :("/>
+                                    <segment title="Didn't Say Sorry :)"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSNS:" destination="Dbn-e6-TfF" eventType="valueChanged" id="2gz-JP-TfX"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -182,6 +185,7 @@
                     <tabBarItem key="tabBarItem" title="Leaderboard" id="d8G-x3-LZv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="cQw-Ov-Dg4" id="Qwh-ty-3R6"/>
                         <outlet property="table" destination="vDo-a2-8GA" id="oI9-2u-TZV"/>
                     </connections>
                 </viewController>
