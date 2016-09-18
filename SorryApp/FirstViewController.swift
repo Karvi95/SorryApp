@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class FirstViewController: UIViewController {
     @IBOutlet weak var chart: LineChartView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     let userEnpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
     let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
 
@@ -28,6 +29,18 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func timePeriodSegmentControl(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            loadChart("week");
+        case 1:
+            loadChart("month");
+        case 2:
+            loadChart("year");
+        default:
+            break; 
+        }
     }
 
     
@@ -54,7 +67,7 @@ class FirstViewController: UIViewController {
                 return
             }
             let swiftyJSON = JSON(data: data!)
-            var status = swiftyJSON["status"].stringValue
+            let status = swiftyJSON["status"].stringValue
             if status == "200"{
                 let records = swiftyJSON["data"]["records"]
                 var i = 0
@@ -65,16 +78,29 @@ class FirstViewController: UIViewController {
                 }
                 var dataEntries: [ChartDataEntry] = []
                 i = 0
-                for date in self.x{
+                for _ in self.x {
                     let dataEntry = ChartDataEntry(value: self.y[i], xIndex: i)
                     dataEntries.append(dataEntry)
                     i += 1
                 }
-                let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
-                lineChartDataSet.circleColors = [NSUIColor.blueColor()]
+                let lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
+                lineChartSorryDataSet.circleColors = [NSUIColor.blueColor()]
                 var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-                dataSets.append(lineChartDataSet)
+                dataSets.append(lineChartSorryDataSet)
                 let lineChartData = LineChartData(xVals: self.x, dataSets: dataSets)
+                
+                let yAxisRight = self.chart.getAxis(ChartYAxis.AxisDependency.Right);
+                yAxisRight.drawLabelsEnabled = false;
+                let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
+                yAxisLeft.axisMinValue = 0;
+                yAxisLeft.axisMaxValue = self.y.maxElement()! + 5;
+                
+                yAxisRight.drawGridLinesEnabled = false;
+                yAxisLeft.drawGridLinesEnabled = false;
+                
+                yAxisLeft.valueFormatter = NSNumberFormatter()
+                yAxisLeft.valueFormatter!.minimumFractionDigits = 0
+                
                 self.chart.data = lineChartData
             }
             else{

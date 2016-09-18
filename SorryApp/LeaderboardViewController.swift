@@ -49,7 +49,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell = self.table.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+            let cell = self.table.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         
             cell.rank.text = String(indexPath.row + 1) + "."
             cell.user.text = names[indexPath.row]
@@ -81,7 +81,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
                 return
             }
             let swiftyJSON = JSON(data: data!)
-            var status = swiftyJSON["status"].stringValue
+            let status = swiftyJSON["status"].stringValue
             if status == "200"{
                 let users = swiftyJSON["data"]["user"]
                 var i = 0

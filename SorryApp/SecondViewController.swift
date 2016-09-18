@@ -84,7 +84,7 @@ class SecondViewController: UIViewController {
                 return
             }
             let swiftyJSON = JSON(data: data!)
-            var status = swiftyJSON["status"].stringValue
+            let status = swiftyJSON["status"].stringValue
             if status == "200"{
                 let numSNS = swiftyJSON["data"]["num_" + sorrynotsorry][0].stringValue
                 NSLog(numSNS)

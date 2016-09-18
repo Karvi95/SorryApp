@@ -60,9 +60,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) -> Void in
 
             if (error == nil) {
-                var email = result["email"] as! String
+                let email = result["email"] as! String
                 NSLog(email)
-                var params = "?email=" + email
+                let params = "?email=" + email
                 let get = NSMutableURLRequest(URL: NSURL(string: self.endpoint + params)!)
                 get.HTTPMethod = "GET"
                 let gettask = NSURLSession.sharedSession().dataTaskWithRequest(get){
@@ -167,7 +167,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             
             NSLog("postString: \(postString) response: \(response)")
-            let swiftyJSON = JSON(data: data!)
+            _ = JSON(data: data!)
             //var status = swiftyJSON["status"].stringValue
             //if(status == "200"){
                 NSLog("user addded")

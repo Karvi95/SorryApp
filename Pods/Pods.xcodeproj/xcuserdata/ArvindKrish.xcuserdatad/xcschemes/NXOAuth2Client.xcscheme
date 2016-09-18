@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E85AABA23B5E543708FA4E03130F831"
-               BuildableName = "libNXOAuth2Client.a"
+               BlueprintIdentifier = "5E2060A6AE6C46CDA0BA36F24FF908FC"
+               BuildableName = "NXOAuth2Client.framework"
                BlueprintName = "NXOAuth2Client"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E85AABA23B5E543708FA4E03130F831"
-            BuildableName = "libNXOAuth2Client.a"
+            BlueprintIdentifier = "5E2060A6AE6C46CDA0BA36F24FF908FC"
+            BuildableName = "NXOAuth2Client.framework"
             BlueprintName = "NXOAuth2Client"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1E85AABA23B5E543708FA4E03130F831"
-            BuildableName = "libNXOAuth2Client.a"
+            BlueprintIdentifier = "5E2060A6AE6C46CDA0BA36F24FF908FC"
+            BuildableName = "NXOAuth2Client.framework"
             BlueprintName = "NXOAuth2Client"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

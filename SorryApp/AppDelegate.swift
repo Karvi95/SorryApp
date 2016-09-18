@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = loginVC
         // Override point for customization after application launch.
         
-        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        _ = UIApplication.sharedApplication().delegate as! AppDelegate
         
         return true
     }
