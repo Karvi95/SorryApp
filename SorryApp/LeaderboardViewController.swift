@@ -35,18 +35,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let topColor = UIColor(red: (15/255.0), green: (118/255.0), blue: (128/255.0), alpha: 1);
-        let bottomColor = UIColor(red: (84/255.0), green: (187/255.0), blue: (187/255.0), alpha: 1);
-        
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor];
-        let gradientLocations: [Float] = [0.0, 1.0];
-        
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors;
-        gradientLayer.locations = gradientLocations;
-        
-        gradientLayer.frame = self.view.bounds;
-        self.view.layer.insertSublayer(gradientLayer, atIndex: 0);
+        let background = CAGradientLayer().turquoiseColor();
+        background.frame = self.view.bounds;
+        self.view.layer.insertSublayer(background, atIndex: 0);
         
         updateLeaderboard("sorry")
     }

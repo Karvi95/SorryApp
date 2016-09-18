@@ -19,6 +19,7 @@
 		A11FB0741D473DB5007286B8 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = A11FB0731D473DB5007286B8 /* bridge.m */; };
 		A11FB0761D474396007286B8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11FB0751D474396007286B8 /* Bolts.framework */; };
 		A1B059311D8970A500B2AA2A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B059301D8970A500B2AA2A /* CustomCell.swift */; };
+		F81F95621D8F298B00416EFF /* CAGradientLayer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F95611D8F298B00416EFF /* CAGradientLayer+Convenience.swift */; };
 		F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */; };
 		F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */; };
 		F8A3BBF41D3F0E9400663D91 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BBF31D3F0E9400663D91 /* SecondViewController.swift */; };
@@ -110,6 +111,7 @@
 		A11FB0751D474396007286B8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1B059301D8970A500B2AA2A /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E5E14B8FF36F718D31E622AC /* Pods-SorryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SorryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SorryApp/Pods-SorryApp.release.xcconfig"; sourceTree = "<group>"; };
+		F81F95611D8F298B00416EFF /* CAGradientLayer+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Convenience.swift"; sourceTree = "<group>"; };
 		F8A3BBEC1D3F0E9400663D91 /* SorryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SorryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BBEF1D3F0E9400663D91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A3BBF11D3F0E9400663D91 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				F8A3BBF81D3F0E9400663D91 /* Assets.xcassets */,
 				F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */,
 				F8A3BBFD1D3F0E9400663D91 /* Info.plist */,
+				F81F95611D8F298B00416EFF /* CAGradientLayer+Convenience.swift */,
 			);
 			path = SorryApp;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */,
 				A1B059311D8970A500B2AA2A /* CustomCell.swift in Sources */,
 				F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */,
+				F81F95621D8F298B00416EFF /* CAGradientLayer+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
