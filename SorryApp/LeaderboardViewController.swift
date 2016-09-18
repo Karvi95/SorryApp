@@ -35,9 +35,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let background = CAGradientLayer().turquoiseColor();
-        background.frame = self.view.bounds;
-        self.view.layer.insertSublayer(background, atIndex: 0);
+        let gradientView = GradientView(frame: self.view.bounds);
+        self.view.insertSubview(gradientView, atIndex: 0);
         
         updateLeaderboard("sorry")
     }

@@ -28,10 +28,8 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let background = CAGradientLayer().turquoiseColor();
-        background.frame = self.view.bounds;
-        self.view.layer.insertSublayer(background, atIndex: 0);
-        
+        let gradientView = GradientView(frame: self.view.bounds);
+        self.view.insertSubview(gradientView, atIndex: 0);
         
         // pull timesSaidSorry and not sorry from database
         // Reset to zero once a day has past
