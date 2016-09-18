@@ -18,8 +18,9 @@ class FirstViewController: UIViewController {
     let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
 
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var x = [String]()
-    var y = [Double]()
+    var x = [String]();
+    var ySorry = [Double]();
+    var yNotSorry = [Double]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,8 @@ class FirstViewController: UIViewController {
     
     func loadChart(type: String){
         x.removeAll()
-        y.removeAll()
+        ySorry.removeAll()
+        yNotSorry.removeAll()
         let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=sorry" + "&type=" + type
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
@@ -77,16 +79,17 @@ class FirstViewController: UIViewController {
                 var i = 0
                 for record in records{
                     self.x.append(record.1["Date"].stringValue)
-                    self.y.append(Double(record.1["SCORE"].stringValue)!)
+                    self.ySorry.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
                 }
                 var dataEntries: [ChartDataEntry] = []
                 i = 0
                 for _ in self.x {
-                    let dataEntry = ChartDataEntry(value: self.y[i], xIndex: i)
+                    let dataEntry = ChartDataEntry(value: self.ySorry[i], xIndex: i)
                     dataEntries.append(dataEntry)
                     i += 1
                 }
+                dispatch_async(dispatch_get_main_queue()){
                 let lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
                 lineChartSorryDataSet.circleColors = [NSUIColor.blueColor()]
                 var dataSets : [LineChartDataSet] = [LineChartDataSet]()
@@ -97,7 +100,7 @@ class FirstViewController: UIViewController {
                 yAxisRight.drawLabelsEnabled = false;
                 let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
                 yAxisLeft.axisMinValue = 0;
-                yAxisLeft.axisMaxValue = self.y.maxElement()! + 5;
+                yAxisLeft.axisMaxValue = self.ySorry.maxElement()! + 5;
                 
                 yAxisRight.drawGridLinesEnabled = false;
                 yAxisLeft.drawGridLinesEnabled = false;
@@ -106,6 +109,7 @@ class FirstViewController: UIViewController {
                 yAxisLeft.valueFormatter!.minimumFractionDigits = 0
                 
                 self.chart.data = lineChartData
+                }
             }
             else{
                 NSLog("error code " + status)
