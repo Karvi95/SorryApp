@@ -19,8 +19,9 @@ class FirstViewController: UIViewController {
 
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var x = [String]();
-    var ySorry = [Double]();
-    var yNotSorry = [Double]();
+    var y = [Double]();
+    var typeG = "week"
+    var sorrynotsorryG = "sorry"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class FirstViewController: UIViewController {
         let gradientView = GradientView(frame: self.view.bounds);
         self.view.insertSubview(gradientView, atIndex: 0);
         
-        loadChart("week")
+        loadChart()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,25 +39,31 @@ class FirstViewController: UIViewController {
     @IBAction func timePeriodSegmentControl(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            loadChart("week");
+            typeG = "week"
+            loadChart();
         case 1:
-            loadChart("month");
+            typeG = "month"
+            loadChart();
         case 2:
-            loadChart("year");
+            typeG = "year"
+            loadChart();
         default:
             break; 
         }
     }
 
     
-    func loadChart(type: String){
+    func loadChart(){
         x.removeAll()
-        ySorry.removeAll()
-        yNotSorry.removeAll()
-        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=sorry" + "&type=" + type
+        y.removeAll()
+        getData(sorrynotsorryG, type: typeG)
+    }
+    
+    func getData(sorrynotsorry: String, type: String){
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
             data, response, er in
             
             if er != nil{
@@ -79,36 +86,36 @@ class FirstViewController: UIViewController {
                 var i = 0
                 for record in records{
                     self.x.append(record.1["Date"].stringValue)
-                    self.ySorry.append(Double(record.1["SCORE"].stringValue)!)
+                    self.y.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
                 }
                 var dataEntries: [ChartDataEntry] = []
                 i = 0
                 for _ in self.x {
-                    let dataEntry = ChartDataEntry(value: self.ySorry[i], xIndex: i)
+                    let dataEntry = ChartDataEntry(value: self.y[i], xIndex: i)
                     dataEntries.append(dataEntry)
                     i += 1
                 }
                 dispatch_async(dispatch_get_main_queue()){
-                let lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
-                lineChartSorryDataSet.circleColors = [NSUIColor.blueColor()]
-                var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-                dataSets.append(lineChartSorryDataSet)
-                let lineChartData = LineChartData(xVals: self.x, dataSets: dataSets)
-                
-                let yAxisRight = self.chart.getAxis(ChartYAxis.AxisDependency.Right);
-                yAxisRight.drawLabelsEnabled = false;
-                let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
-                yAxisLeft.axisMinValue = 0;
-                yAxisLeft.axisMaxValue = self.ySorry.maxElement()! + 5;
-                
-                yAxisRight.drawGridLinesEnabled = false;
-                yAxisLeft.drawGridLinesEnabled = false;
-                
-                yAxisLeft.valueFormatter = NSNumberFormatter()
-                yAxisLeft.valueFormatter!.minimumFractionDigits = 0
-                
-                self.chart.data = lineChartData
+                    let lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
+                    lineChartSorryDataSet.circleColors = [NSUIColor.blueColor()]
+                    var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+                    dataSets.append(lineChartSorryDataSet)
+                    let lineChartData = LineChartData(xVals: self.x, dataSets: dataSets)
+                    
+                    let yAxisRight = self.chart.getAxis(ChartYAxis.AxisDependency.Right);
+                    yAxisRight.drawLabelsEnabled = false;
+                    let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
+                    yAxisLeft.axisMinValue = 0;
+                    yAxisLeft.axisMaxValue = self.y.maxElement()! + 5;
+                    
+                    yAxisRight.drawGridLinesEnabled = false;
+                    yAxisLeft.drawGridLinesEnabled = false;
+                    
+                    yAxisLeft.valueFormatter = NSNumberFormatter()
+                    yAxisLeft.valueFormatter!.minimumFractionDigits = 0
+                    
+                    self.chart.data = lineChartData
                 }
             }
             else{
@@ -116,7 +123,6 @@ class FirstViewController: UIViewController {
             }
         }
         task.resume()
-
     }
 
 }

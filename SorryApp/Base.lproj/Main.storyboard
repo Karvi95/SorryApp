@@ -20,21 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-QA-c0t">
-                                <rect key="frame" x="74" y="111" width="266" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="266" id="yEI-4e-0J6"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Week"/>
-                                    <segment title="Month"/>
-                                    <segment title="Year"/>
-                                </segments>
-                                <color key="tintColor" red="0.98991245031356812" green="0.76971065998077393" blue="0.013347547501325607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="timePeriodSegmentControl:" destination="9pv-A4-QxB" eventType="valueChanged" id="2mf-UR-Mzq"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yi-Pg-GTJ" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="68" y="169" width="272" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,31 +86,93 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hOf-2l-gkI">
+                                <rect key="frame" x="91" y="598" width="231" height="29"/>
+                                <segments>
+                                    <segment title="Said Sorry"/>
+                                    <segment title="Didn't Say Sorry"/>
+                                </segments>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="258" y="305" width="231" height="29"/>
+                                </variation>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-QA-c0t">
+                                <rect key="frame" x="74" y="111" width="266" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="yEI-4e-0J6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                                <color key="tintColor" red="0.98991245031356812" green="0.76971065998077393" blue="0.013347547501325607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="timePeriodSegmentControl:" destination="9pv-A4-QxB" eventType="valueChanged" id="2mf-UR-Mzq"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Z7f-8N-M7O">
+                                <rect key="frame" x="91" y="598" width="231" height="29"/>
+                                <segments>
+                                    <segment title="Said Sorry"/>
+                                    <segment title="Didn't Say Sorry"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="14P-d0-3og">
+                                <rect key="frame" x="91" y="598" width="231" height="29"/>
+                                <segments>
+                                    <segment title="Said Sorry"/>
+                                    <segment title="Didn't Say Sorry"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fhd-ww-P8e" firstAttribute="centerX" secondItem="dNJ-QA-c0t" secondAttribute="centerX" id="0Tj-fa-eBk"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="14P-d0-3og" secondAttribute="bottom" constant="38" id="7TZ-73-Zh1"/>
+                            <constraint firstItem="Z7f-8N-M7O" firstAttribute="centerX" secondItem="8Yi-Pg-GTJ" secondAttribute="centerX" id="Fl5-1g-Cmx">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="mgj-PP-Cau" firstAttribute="centerX" secondItem="8Yi-Pg-GTJ" secondAttribute="centerX" id="Fvy-Zd-FUm"/>
                             <constraint firstItem="8Yi-Pg-GTJ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="LUp-AQ-7rx"/>
+                            <constraint firstItem="14P-d0-3og" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="72" id="Nyb-bv-3in"/>
+                            <constraint firstItem="14P-d0-3og" firstAttribute="centerX" secondItem="8Yi-Pg-GTJ" secondAttribute="centerX" id="Xl8-9p-Biq"/>
                             <constraint firstItem="fhd-ww-P8e" firstAttribute="centerX" secondItem="8Yi-Pg-GTJ" secondAttribute="centerX" id="ctN-0d-uCc"/>
-                            <constraint firstItem="8Yi-Pg-GTJ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="149" id="drh-x4-jyF"/>
+                            <constraint firstItem="8Yi-Pg-GTJ" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="149" id="drh-x4-jyF">
+                                <variation key="heightClass=compact-widthClass=regular" constant="120"/>
+                            </constraint>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Z7f-8N-M7O" secondAttribute="bottom" constant="42" id="kf0-NG-iNp"/>
                             <constraint firstItem="mgj-PP-Cau" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="odQ-c8-s2H"/>
-                            <constraint firstItem="8Yi-Pg-GTJ" firstAttribute="top" secondItem="dNJ-QA-c0t" secondAttribute="bottom" constant="30" id="uas-zu-Bdu"/>
+                            <constraint firstItem="8Yi-Pg-GTJ" firstAttribute="top" secondItem="dNJ-QA-c0t" secondAttribute="bottom" constant="30" id="uas-zu-Bdu">
+                                <variation key="heightClass=compact-widthClass=regular" constant="17"/>
+                            </constraint>
                             <constraint firstItem="fhd-ww-P8e" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="xVw-sr-OgX"/>
+                            <constraint firstItem="Z7f-8N-M7O" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="72" id="xpb-SI-YiO">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstItem="mgj-PP-Cau" firstAttribute="centerX" secondItem="dNJ-QA-c0t" secondAttribute="centerX" id="z2T-6E-EIa"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fhd-ww-P8e"/>
                                 <exclude reference="mgj-PP-Cau"/>
+                                <exclude reference="hOf-2l-gkI"/>
+                                <exclude reference="Z7f-8N-M7O"/>
+                                <exclude reference="14P-d0-3og"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Tj-fa-eBk"/>
-                                <exclude reference="ctN-0d-uCc"/>
-                                <exclude reference="xVw-sr-OgX"/>
                                 <exclude reference="Fvy-Zd-FUm"/>
                                 <exclude reference="odQ-c8-s2H"/>
                                 <exclude reference="z2T-6E-EIa"/>
+                                <exclude reference="0Tj-fa-eBk"/>
+                                <exclude reference="ctN-0d-uCc"/>
+                                <exclude reference="xVw-sr-OgX"/>
+                                <exclude reference="Fl5-1g-Cmx"/>
+                                <exclude reference="xpb-SI-YiO"/>
+                                <exclude reference="7TZ-73-Zh1"/>
+                                <exclude reference="kf0-NG-iNp"/>
+                                <exclude reference="Nyb-bv-3in"/>
+                                <exclude reference="Xl8-9p-Biq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -138,14 +185,33 @@
                                 <include reference="z2T-6E-EIa"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="14P-d0-3og"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7TZ-73-Zh1"/>
+                                <include reference="Nyb-bv-3in"/>
+                                <include reference="Xl8-9p-Biq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="hOf-2l-gkI"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fhd-ww-P8e"/>
+                                <include reference="Z7f-8N-M7O"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0Tj-fa-eBk"/>
                                 <include reference="ctN-0d-uCc"/>
                                 <include reference="xVw-sr-OgX"/>
+                                <include reference="Fl5-1g-Cmx"/>
+                                <include reference="xpb-SI-YiO"/>
+                                <include reference="kf0-NG-iNp"/>
                             </mask>
                         </variation>
                     </view>
@@ -158,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-511.5"/>
+            <point key="canvasLocation" x="750" y="-513"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="V0U-6s-WWd">
@@ -535,8 +601,7 @@
                                         <include reference="zCw-R6-x4A"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="147" y="78" width="274" height="64"/>
+                                <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="B9Z-45-eIz"/>
                                         <include reference="aMI-wG-OFq"/>
@@ -1176,4 +1241,5 @@
         <image name="first" width="30" height="30"/>
         <image name="leaderboard" width="30" height="30"/>
     </resources>
+    <color key="tintColor" red="0.98991245031356812" green="0.76971065998077393" blue="0.013347547501325607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
