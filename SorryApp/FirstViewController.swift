@@ -14,12 +14,13 @@ import SwiftyJSON
 class FirstViewController: UIViewController {
     @IBOutlet weak var chart: LineChartView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var snsSegmentControl: UISegmentedControl!
     let userEnpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
     let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
 
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var x = [String]();
-    var y = [Double]();
+    var x = [String]()
+    var y = [Double]()
     var typeG = "week"
     var sorrynotsorryG = "sorry"
 
@@ -32,6 +33,20 @@ class FirstViewController: UIViewController {
         loadChart()
     }
 
+    @IBAction func changeSNS(sender: AnyObject) {
+        switch(snsSegmentControl.selectedSegmentIndex){
+            case 0:
+                sorrynotsorryG = "sorry"
+                loadChart()
+                break
+            case 1:
+                sorrynotsorryG = "notsorry"
+                loadChart()
+                break
+            default:
+                break
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
