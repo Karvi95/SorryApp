@@ -18,6 +18,7 @@ class FirstViewController: UIViewController {
     let userEnpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/users.php"
     let sNSEndpoint = "http://sorryapp.canadacentral.cloudapp.azure.com/SorryAppBackend/sorrynotsorry.php"
 
+    
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var x = [String]()
     var y = [Double]()
@@ -88,7 +89,8 @@ class FirstViewController: UIViewController {
     }
     
     func getData(sorrynotsorry: String, type: String){
-        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type
+        let dateString = getCurrentDateTime()
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type + "&timestamp=" + dateString
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -180,6 +182,14 @@ class FirstViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    func getCurrentDateTime() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let d = NSDate()
+        let s = dateFormatter.stringFromDate(d)
+        return s;
     }
 
 }
