@@ -102,10 +102,10 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DtC-aG-DEN">
-                                <rect key="frame" x="102" y="614" width="210" height="29"/>
+                                <rect key="frame" x="83" y="614" width="249" height="29"/>
                                 <segments>
                                     <segment title="Said Sorry :("/>
-                                    <segment title="Didn't Say Sorry"/>
+                                    <segment title="Didn't Say Sorry :)"/>
                                 </segments>
                                 <connections>
                                     <action selector="changeSNS:" destination="9pv-A4-QxB" eventType="valueChanged" id="cqc-U9-5PQ"/>
@@ -115,7 +115,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fhd-ww-P8e" firstAttribute="centerX" secondItem="dNJ-QA-c0t" secondAttribute="centerX" id="0Tj-fa-eBk"/>
-                            <constraint firstItem="DtC-aG-DEN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="82" id="CQy-l6-M8i">
+                            <constraint firstItem="DtC-aG-DEN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="63" id="CQy-l6-M8i">
                                 <variation key="widthClass=compact" constant="23"/>
                             </constraint>
                             <constraint firstItem="mgj-PP-Cau" firstAttribute="centerX" secondItem="8Yi-Pg-GTJ" secondAttribute="centerX" id="Fvy-Zd-FUm"/>
@@ -225,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zz0-NM-ct0" id="Tvm-LC-7pd">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bca-r0-khO">

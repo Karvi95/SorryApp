@@ -25,11 +25,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         
         
-        let gradientView = GradientView(frame: self.view.bounds);
-        self.view.insertSubview(gradientView, atIndex: 0);
-        
-        
-        
+        let background = CAGradientLayer().turquoiseColor();
+        background.frame = self.view.bounds;
+        self.view.layer.insertSublayer(background, atIndex: 0);
         
         
         
@@ -38,8 +36,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 //        loginButton.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         let token = FBSDKAccessToken.currentAccessToken()
-        let loginManager = FBSDKLoginManager()    //only uncomment when logging out user for testing
-        loginManager.logOut()
+//        let loginManager = FBSDKLoginManager()    //only uncomment when logging out user for testing
+//        loginManager.logOut()
         if (token != nil) {
             fetchProfile()
         }

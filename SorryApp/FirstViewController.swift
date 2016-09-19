@@ -112,8 +112,15 @@ class FirstViewController: UIViewController {
                     i += 1
                 }
                 dispatch_async(dispatch_get_main_queue()){
-                    let lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"sorry")
-                    lineChartSorryDataSet.circleColors = [NSUIColor.blueColor()]
+                    var lineChartSorryDataSet : LineChartDataSet;
+                    if (self.sorrynotsorryG == "sorry") {
+                        lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"Sorry")
+                    } else {
+                        lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"Not sorry")
+                    }
+                    
+                    lineChartSorryDataSet.circleRadius = 0;
+                    
                     var dataSets : [LineChartDataSet] = [LineChartDataSet]()
                     dataSets.append(lineChartSorryDataSet)
                     let lineChartData = LineChartData(xVals: self.x, dataSets: dataSets)
@@ -122,13 +129,17 @@ class FirstViewController: UIViewController {
                     yAxisRight.drawLabelsEnabled = false;
                     let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
                     yAxisLeft.axisMinValue = 0;
-                    yAxisLeft.axisMaxValue = self.y.maxElement()! + 5;
+                    yAxisLeft.axisMaxValue = (self.y.maxElement()! + 8);
+                    
                     
                     yAxisRight.drawGridLinesEnabled = false;
                     yAxisLeft.drawGridLinesEnabled = false;
                     
                     yAxisLeft.valueFormatter = NSNumberFormatter()
                     yAxisLeft.valueFormatter!.minimumFractionDigits = 0
+                    
+                    self.chart.multipleTouchEnabled = false;
+                    self.chart.doubleTapToZoomEnabled = false;
                     
                     self.chart.data = lineChartData
                 }
