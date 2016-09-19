@@ -29,6 +29,7 @@
 		F8A3BBFC1D3F0E9400663D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A3BBFA1D3F0E9400663D91 /* LaunchScreen.storyboard */; };
 		F8A3BC071D3F0E9400663D91 /* SorryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC061D3F0E9400663D91 /* SorryAppTests.swift */; };
 		F8A3BC121D3F0E9400663D91 /* SorryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3BC111D3F0E9400663D91 /* SorryAppUITests.swift */; };
+		F8BC126C1D909FF700B2BF97 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC126B1D909FF700B2BF97 /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		F8A3BC0D1D3F0E9400663D91 /* SorryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SorryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A3BC111D3F0E9400663D91 /* SorryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorryAppUITests.swift; sourceTree = "<group>"; };
 		F8A3BC131D3F0E9400663D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8BC126B1D909FF700B2BF97 /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				F8A3BBFD1D3F0E9400663D91 /* Info.plist */,
 				F81F95611D8F298B00416EFF /* CAGradientLayer+Convenience.swift */,
 				F81F95671D8F4DFF00416EFF /* GradientView.swift */,
+				F8BC126B1D909FF700B2BF97 /* BaseTabBarController.swift */,
 			);
 			path = SorryApp;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				F8A3BBF01D3F0E9400663D91 /* AppDelegate.swift in Sources */,
 				9DE92A221D42D51D000FE901 /* LeaderboardViewController.swift in Sources */,
 				9D4DFDBB1D555AF80061DC81 /* TabBarViewController.swift in Sources */,
+				F8BC126C1D909FF700B2BF97 /* BaseTabBarController.swift in Sources */,
 				A11FB0711D473A9E007286B8 /* LoginViewController.swift in Sources */,
 				A1B059311D8970A500B2AA2A /* CustomCell.swift in Sources */,
 				F8A3BBF21D3F0E9400663D91 /* FirstViewController.swift in Sources */,

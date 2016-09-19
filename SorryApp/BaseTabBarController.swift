@@ -1,19 +1,20 @@
 //
-//  TabBarViewController.swift
+//  BaseTabBarController.swift
 //  SorryApp
 //
-//  Created by iGuest on 8/5/16.
+//  Created by Arvindram Krishnamoorthy on 9/19/16.
 //  Copyright © 2016 Arvindram Krishnamoorthy. All rights reserved.
 //
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class BaseTabBarController: UITabBarController {
 
+    @IBInspectable var defaultIndex: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        selectedIndex = defaultIndex
     }
 
     override func didReceiveMemoryWarning() {
