@@ -115,11 +115,13 @@ class FirstViewController: UIViewController {
                     var lineChartSorryDataSet : LineChartDataSet;
                     if (self.sorrynotsorryG == "sorry") {
                         lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"Sorry")
+                        lineChartSorryDataSet.colors = [NSUIColor.redColor()];
                     } else {
                         lineChartSorryDataSet = LineChartDataSet(yVals: dataEntries, label:"Not sorry")
+                        lineChartSorryDataSet.colors = [NSUIColor.blueColor()];
                     }
                     
-                    lineChartSorryDataSet.circleRadius = 0;
+                    lineChartSorryDataSet.drawCirclesEnabled = false;
                     
                     var dataSets : [LineChartDataSet] = [LineChartDataSet]()
                     dataSets.append(lineChartSorryDataSet)
@@ -140,6 +142,7 @@ class FirstViewController: UIViewController {
                     
                     self.chart.multipleTouchEnabled = false;
                     self.chart.doubleTapToZoomEnabled = false;
+                    
                     
                     self.chart.data = lineChartData
                 }
