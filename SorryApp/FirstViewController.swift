@@ -21,6 +21,19 @@ class FirstViewController: UIViewController {
     let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var x = [String]()
     var y = [Double]()
+    var yearDict: [String:String] = [
+        "1" : "Jan",
+        "2" : "Feb",
+        "3" : "Mar",
+        "4" : "Apr",
+        "5" : "May",
+        "6" : "Jun",
+        "7" : "Jul",
+        "8" : "Aug",
+        "9" : "Sep",
+        "10" : "Oct",
+        "11" : "Nov",
+        "12" : "Dec"];
     var typeG = "week"
     var sorrynotsorryG = "sorry"
 
@@ -100,7 +113,12 @@ class FirstViewController: UIViewController {
                 let records = swiftyJSON["data"]["records"]
                 var i = 0
                 for record in records{
-                    self.x.append(record.1["Date"].stringValue)
+                    var myDate = record.1["Date"].stringValue;
+                    if (type == "year") {
+                        myDate = self.yearDict[myDate]!;
+                    }
+                    self.x.append(myDate);
+//                    print("MyDate: " + myDate);
                     self.y.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
                 }
@@ -131,8 +149,18 @@ class FirstViewController: UIViewController {
                     yAxisRight.drawLabelsEnabled = false;
                     let yAxisLeft = self.chart.getAxis(ChartYAxis.AxisDependency.Left);
                     yAxisLeft.axisMinValue = 0;
-                    yAxisLeft.axisMaxValue = (self.y.maxElement()! + 8);
-                    
+                    var paddingUp = 0;
+                    let potentialMax = Int(self.y.maxElement()!);
+                    if (potentialMax >= 20) {
+                        paddingUp = 5;
+                    }
+                    if (potentialMax >= 100) {
+                        paddingUp = potentialMax / 2;
+                    }
+                    if (potentialMax >= 1000) {
+                        paddingUp = potentialMax / 4;
+                    }
+                    yAxisLeft.axisMaxValue = Double(Int((Double(potentialMax) + Double(paddingUp))));
                     
                     yAxisRight.drawGridLinesEnabled = false;
                     yAxisLeft.drawGridLinesEnabled = false;

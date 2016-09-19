@@ -86,7 +86,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <segmentedControl opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-QA-c0t">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dNJ-QA-c0t">
                                 <rect key="frame" x="74" y="111" width="266" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="yEI-4e-0J6"/>
@@ -150,15 +150,15 @@
                                 <exclude reference="mgj-PP-Cau"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0Tj-fa-eBk"/>
+                                <exclude reference="ctN-0d-uCc"/>
+                                <exclude reference="xVw-sr-OgX"/>
+                                <exclude reference="Fvy-Zd-FUm"/>
                                 <exclude reference="odQ-c8-s2H"/>
                                 <exclude reference="z2T-6E-EIa"/>
                                 <exclude reference="TJs-0H-Hu0"/>
                                 <exclude reference="cbF-eT-mfm"/>
                                 <exclude reference="yT1-16-VUc"/>
-                                <exclude reference="0Tj-fa-eBk"/>
-                                <exclude reference="ctN-0d-uCc"/>
-                                <exclude reference="xVw-sr-OgX"/>
-                                <exclude reference="Fvy-Zd-FUm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -166,9 +166,9 @@
                                 <include reference="mgj-PP-Cau"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Fvy-Zd-FUm"/>
                                 <include reference="odQ-c8-s2H"/>
                                 <include reference="z2T-6E-EIa"/>
-                                <include reference="Fvy-Zd-FUm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -1203,6 +1203,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
