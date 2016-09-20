@@ -125,7 +125,6 @@ class FirstViewController: UIViewController {
                     if (self.typeG == "year") {
                         myDate = self.yearDict[myDate]!;
                     }
-//                    print(myDate)
                     if (self.typeG == "week" || self.typeG == "month") {
                         let indexStartOfTextMonth = myDate.startIndex.advancedBy(5)
                         let indexEndOfTextMonth = myDate.endIndex.advancedBy(-3)
