@@ -105,11 +105,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SorryApp/FirstViewController.swift"
-            timestampString = "496025595.817686"
+            timestampString = "496050719.381606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "getData(_:type:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SorryApp/FirstViewController.swift"
+            timestampString = "496050712.94707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "getData(_:type:)"
             landmarkType = "5">
          </BreakpointContent>

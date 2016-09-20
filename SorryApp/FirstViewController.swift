@@ -125,32 +125,37 @@ class FirstViewController: UIViewController {
                     if (self.typeG == "year") {
                         myDate = self.yearDict[myDate]!;
                     }
-//                    if (self.typeG == "week" || self.typeG == "month") {
-//                        let myNSStringMonth = myDate as NSString
-//                        myNSStringMonth.substringWithRange(NSRange(location: 6, length: 2))
-//                        let resultStringMonth = myNSStringMonth as String
-//                        print("Month \(resultStringMonth)")
-//                        
-//                        let myNSStringDay = myDate as NSString
-//                        myNSStringDay.substringWithRange(NSRange(location: 9, length: 2))
-//                        let resultStringDay = myNSStringDay as String
-//                        
-//                        var ending = "th of"
-//                        if (resultStringDay == "01") {
-//                            ending = "st of"
-//                        }
-//                        if (resultStringDay == "02") {
-//                            ending = "nd of"
-//                        }
-//                        if (resultStringDay == "03") {
-//                            ending = "rdof "
-//                        }
-//                        
-//                        let resultString = resultStringDay + ending + resultStringMonth
-//                        
-//                        myDate = resultString
-//                        
-//                    }
+//                    print(myDate)
+                    if (self.typeG == "week" || self.typeG == "month") {
+                        let indexStartOfTextMonth = myDate.startIndex.advancedBy(5)
+                        let indexEndOfTextMonth = myDate.endIndex.advancedBy(-3)
+                    
+                        let resultStringMonth = myDate.substringWithRange(indexStartOfTextMonth..<indexEndOfTextMonth)
+
+                        let indexStartOfTextDay = myDate.startIndex.advancedBy(8)
+                        let indexEndOfTextDay = myDate.endIndex.advancedBy(0)
+                     
+                        let resultStringDay = myDate.substringWithRange(indexStartOfTextDay..<indexEndOfTextDay)
+                        
+                        
+                        var ending = "th of "
+                        if (resultStringDay == "01") {
+                            ending = "st of "
+                        }
+                        if (resultStringDay == "02") {
+                            ending = "nd of "
+                        }
+                        if (resultStringDay == "03") {
+                            ending = "rd of "
+                        }
+                        
+                        let resultString = resultStringDay + ending + resultStringMonth
+                        
+                        print("NEW DATE: " + resultString)
+                        
+                        myDate = resultString
+                        
+                    }
                     self.x.append(myDate);
                     self.y.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
@@ -204,6 +209,7 @@ class FirstViewController: UIViewController {
                     self.chart.multipleTouchEnabled = false;
                     self.chart.doubleTapToZoomEnabled = false;
                     
+                    self.chart.xAxis.labelPosition = .Bottom
                     
                     self.chart.data = lineChartData
                 }
