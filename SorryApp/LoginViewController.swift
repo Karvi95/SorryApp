@@ -31,14 +31,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         
         
-//        view.addSubview(loginButton)
-//        loginButton.center = view.center
-//        loginButton.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         let token = FBSDKAccessToken.currentAccessToken()
-//        let loginManager = FBSDKLoginManager()    //only uncomment when logging out user for testing
-//        loginManager.logOut()
         if (token != nil) {
+            self.delegate.defaults.setObject(token.tokenString, forKey: "access_token")
             fetchProfile()
         }
         
@@ -70,7 +66,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             if (error == nil) {
                 let email = result["email"] as! String
                 NSLog(email)
-                let params = "?email=" + email
+                let access_token = self.delegate.defaults.stringForKey("access_token")!
+                let params = "?email=" + email + "&access_token=" + access_token
                 let get = NSMutableURLRequest(URL: NSURL(string: self.endpoint + params)!)
                 get.HTTPMethod = "GET"
                 let gettask = NSURLSession.sharedSession().dataTaskWithRequest(get){
@@ -147,7 +144,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     func createUser(result : AnyObject, email: String){
-        let url = NSURL(string: endpoint)
+        let access_token = self.delegate.defaults.stringForKey("access_token")!
+        let params = "?access_token=" + access_token
+        let url = NSURL(string: endpoint + params)
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         let fname = result["first_name"] as! String
@@ -170,24 +169,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 response_status = httpResponse.statusCode
             }
             if(response_status != 200){
+                if(response_status == 403){
+                    self.logout()
+                    return
+                }
                 NSLog("cannot access endpoint, error code \(response_status) \(postString)")
                 return
             }
             
             NSLog("postString: \(postString) response: \(response)")
             _ = JSON(data: data!)
-            //var status = swiftyJSON["status"].stringValue
-            //if(status == "200"){
-                NSLog("user addded")
-                self.delegate.defaults.setObject(email, forKey: "email")
-                let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
-                self.presentViewController(meVC, animated: false, completion: nil)
-            //}
-//            else{
-//                NSLog("error code " + status)
-//            }
-            
-            
+            NSLog("user addded")
+            self.delegate.defaults.setObject(email, forKey: "email")
+            let meVC = self.storyboard?.instantiateViewControllerWithIdentifier("Me") as! SecondViewController
+            self.presentViewController(meVC, animated: false, completion: nil)
         }
         task.resume()
 
@@ -199,4 +194,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func logout(){
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+        self.presentViewController(loginVC, animated: true, completion: nil)
+
+    }
 }

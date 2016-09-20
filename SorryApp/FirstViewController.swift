@@ -9,6 +9,7 @@
 import UIKit
 
 import Charts
+import FBSDKLoginKit
 import SwiftyJSON
 
 class FirstViewController: UIViewController {
@@ -90,7 +91,8 @@ class FirstViewController: UIViewController {
     
     func getData(sorrynotsorry: String, type: String){
         let dateString = getCurrentDateTime()
-        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type + "&timestamp=" + dateString
+        let access_token = self.delegate.defaults.stringForKey("access_token")!
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type + "&timestamp=" + dateString + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
@@ -106,6 +108,10 @@ class FirstViewController: UIViewController {
                 response_status = httpResponse.statusCode
             }
             if(response_status != 200){
+                if(response_status == 403){
+                    self.logout()
+                    return
+                }
                 NSLog("cannot access endpoint, error code \(response_status)")
                 return
             }
@@ -116,11 +122,36 @@ class FirstViewController: UIViewController {
                 var i = 0
                 for record in records{
                     var myDate = record.1["Date"].stringValue;
-                    if (type == "year") {
+                    if (self.typeG == "year") {
                         myDate = self.yearDict[myDate]!;
                     }
+//                    if (self.typeG == "week" || self.typeG == "month") {
+//                        let myNSStringMonth = myDate as NSString
+//                        myNSStringMonth.substringWithRange(NSRange(location: 6, length: 2))
+//                        let resultStringMonth = myNSStringMonth as String
+//                        print("Month \(resultStringMonth)")
+//                        
+//                        let myNSStringDay = myDate as NSString
+//                        myNSStringDay.substringWithRange(NSRange(location: 9, length: 2))
+//                        let resultStringDay = myNSStringDay as String
+//                        
+//                        var ending = "th of"
+//                        if (resultStringDay == "01") {
+//                            ending = "st of"
+//                        }
+//                        if (resultStringDay == "02") {
+//                            ending = "nd of"
+//                        }
+//                        if (resultStringDay == "03") {
+//                            ending = "rdof "
+//                        }
+//                        
+//                        let resultString = resultStringDay + ending + resultStringMonth
+//                        
+//                        myDate = resultString
+//                        
+//                    }
                     self.x.append(myDate);
-//                    print("MyDate: " + myDate);
                     self.y.append(Double(record.1["SCORE"].stringValue)!)
                     i += 1
                 }
@@ -192,5 +223,12 @@ class FirstViewController: UIViewController {
         return s;
     }
 
+    func logout(){
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+        self.presentViewController(loginVC, animated: true, completion: nil)
+    }
+    
 }
 

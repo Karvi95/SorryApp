@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 import SwiftyJSON
+
 extension CALayer {
     var borderUIColor: UIColor {
         set {
@@ -68,7 +70,8 @@ class SecondViewController: UIViewController {
     }
     
     func updateSNSCount(sorrynotsorry: String){
-        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry
+        let access_token = self.delegate.defaults.stringForKey("access_token")!
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -84,6 +87,10 @@ class SecondViewController: UIViewController {
                 response_status = httpResponse.statusCode
             }
             if(response_status != 200){
+                if(response_status == 403){
+                    self.logout()
+                    return
+                }
                 NSLog("cannot access endpoint, error code \(response_status)")
                 return
             }
@@ -138,5 +145,11 @@ class SecondViewController: UIViewController {
         
         task.resume()
         
+    }
+    func logout(){
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+        self.presentViewController(loginVC, animated: true, completion: nil)
     }
 }

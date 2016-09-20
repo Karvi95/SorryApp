@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 import SwiftyJSON
 
 class LeaderboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -66,7 +67,9 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
     func updateLeaderboard(sorrynotsorry: String){
         self.names = ["", "", "", "", "", "", "", "", "", ""]
         self.counts = ["", "", "", "", "", "", "", "", "", ""]
-        let params = "?sorrynotsorry=" + sorrynotsorry
+        
+        let access_token = self.delegate.defaults.stringForKey("access_token")!
+        let params = "?sorrynotsorry=" + sorrynotsorry + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: endpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -81,6 +84,10 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
                 response_status = httpResponse.statusCode
             }
             if(response_status != 200){
+                if(response_status == 403){
+                    self.logout()
+                    return
+                }
                 NSLog("cannot access endpoint, error code \(response_status)")
                 return
             }
@@ -106,7 +113,12 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
 
-    
+    func logout(){
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+        self.presentViewController(loginVC, animated: true, completion: nil)
+    }
     
     
     
