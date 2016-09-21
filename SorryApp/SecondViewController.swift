@@ -60,18 +60,10 @@ class SecondViewController: UIViewController {
         saidSNS("notsorry")
     }
     
-    
-    func updateSorryCount(counts : Int){
-        //update it on the screen
-        
-        //get the timestamp
-        
-        //update database with new sorry/not sorry count and timestamp
-    }
-    
     func updateSNSCount(sorrynotsorry: String){
         let access_token = self.delegate.defaults.stringForKey("access_token")!
-        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&access_token=" + access_token
+        let dateString = delegate.getCurrentDateTime()
+        let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&timestamp=" + dateString + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
@@ -114,9 +106,11 @@ class SecondViewController: UIViewController {
     }
     
     func saidSNS(sorrynotsorry: String){
-        let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint)!)
+        let access_token = self.delegate.defaults.stringForKey("access_token")!
+        let dateString = delegate.getCurrentDateTime()
+        let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + "?access_token=" + access_token)!)
         request.HTTPMethod = "POST"
-        let postString = "email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry
+        let postString = "email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&timestamp=" + dateString
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){
             data, response, er in
@@ -130,6 +124,10 @@ class SecondViewController: UIViewController {
                 response_status = httpResponse.statusCode
             }
             if response_status != 200 {
+                if(response_status == 403){
+                    self.logout()
+                    return
+                }
                 NSLog("cannot access endpoint, error code \(response_status)")
                 return
             }

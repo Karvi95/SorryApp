@@ -69,7 +69,8 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
         self.counts = ["", "", "", "", "", "", "", "", "", ""]
         
         let access_token = self.delegate.defaults.stringForKey("access_token")!
-        let params = "?sorrynotsorry=" + sorrynotsorry + "&access_token=" + access_token
+        let dateString = self.delegate.getCurrentDateTime()
+        let params = "?sorrynotsorry=" + sorrynotsorry + "&timestamp=" + dateString + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: endpoint + params)!)
         request.HTTPMethod = "GET"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request){

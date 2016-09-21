@@ -90,7 +90,7 @@ class FirstViewController: UIViewController {
     }
     
     func getData(sorrynotsorry: String, type: String){
-        let dateString = getCurrentDateTime()
+        let dateString = delegate.getCurrentDateTime()
         let access_token = self.delegate.defaults.stringForKey("access_token")!
         let params = "?email=" + delegate.defaults.stringForKey("email")! + "&sorrynotsorry=" + sorrynotsorry + "&type=" + type + "&timestamp=" + dateString + "&access_token=" + access_token
         let request = NSMutableURLRequest(URL: NSURL(string: sNSEndpoint + params)!)
@@ -220,13 +220,7 @@ class FirstViewController: UIViewController {
         task.resume()
     }
     
-    func getCurrentDateTime() -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        let d = NSDate()
-        let s = dateFormatter.stringFromDate(d)
-        return s;
-    }
+
 
     func logout(){
         let loginManager = FBSDKLoginManager()

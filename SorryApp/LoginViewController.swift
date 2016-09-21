@@ -34,7 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         let token = FBSDKAccessToken.currentAccessToken()
         if (token != nil) {
-            self.delegate.defaults.setObject(token.tokenString, forKey: "access_token")
             fetchProfile()
         }
         
@@ -60,6 +59,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func fetchProfile(){
+        let token = FBSDKAccessToken.currentAccessToken()
+        self.delegate.defaults.setObject(token.tokenString, forKey: "access_token")
         let parameters = ["fields": "email, first_name, last_name, link, picture, gender"]
         FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler { (connection, result, error) -> Void in
 
