@@ -66,6 +66,7 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func timePeriodSegmentControl(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
@@ -82,7 +83,6 @@ class FirstViewController: UIViewController {
         }
     }
 
-    
     func loadChart(){
         x.removeAll()
         y.removeAll()
@@ -211,6 +211,7 @@ class FirstViewController: UIViewController {
                     self.chart.xAxis.labelPosition = .Bottom
                     
                     self.chart.data = lineChartData
+                    self.chart.descriptionText = ""
                 }
             }
             else{

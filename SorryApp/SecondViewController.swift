@@ -47,7 +47,6 @@ class SecondViewController: UIViewController {
     
     
     @IBOutlet weak var timesSaidSorry: UILabel!
-    
     @IBOutlet weak var timesNoSorry: UILabel!
     
     @IBAction func saidSorry(sender: AnyObject) {

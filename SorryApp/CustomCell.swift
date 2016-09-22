@@ -10,7 +10,6 @@ import UIKit
 
 class CustomCell: UITableViewCell {
     @IBOutlet weak var rank: UILabel!
-
     @IBOutlet weak var sns: UILabel!
     @IBOutlet weak var user: UILabel!
     override func awakeFromNib() {
